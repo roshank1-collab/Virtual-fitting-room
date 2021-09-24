@@ -1,11 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>About</title>
+	<style>
+    body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+</style>
+	<title>Home</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="static/images/icons/Try-Buy.png">
+<!--===============================================================================================-->
+<link rel="icon" type="image/png" href="static/images/icons/Try-Buy.png">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="static/vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
@@ -16,12 +80,18 @@
 	<link rel="stylesheet" type="text/css" href="static/fonts/linearicons-v1.0.0/icon-font.min.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="static/vendor/animate/animate.css">
-<!--===============================================================================================-->	
+<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="static/vendor/css-hamburgers/hamburgers.min.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="static/vendor/animsition/css/animsition.min.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="static/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/vendor/slick/slick.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/vendor/MagnificPopup/magnific-popup.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="static/vendor/perfect-scrollbar/perfect-scrollbar.css">
 <!--===============================================================================================-->
@@ -30,18 +100,18 @@
 <!--===============================================================================================-->
 </head>
 <body class="animsition">
-	
+
 	<!-- Header -->
 	<header>
 		<!-- Header desktop -->
 		<div class="container-menu-desktop">
 			<!-- Topbar -->
-			
+
 
 			<div class="wrap-menu-desktop">
 				<nav class="limiter-menu-desktop container">
-					
-					<!-- Logo desktop -->		
+
+					<!-- Logo desktop -->
 					<a href="http://127.0.0.1:5000/index" class="logo">
 						<img src="static/images/icons/Try-Buy.png" alt="IMG-LOGO">
 					</a>
@@ -68,20 +138,17 @@
 							<li>
 								<a href="http://127.0.0.1:5000/contact" style="color: black;">Contact</a>
 							</li>
-														<li>
-								<a href="http://127.0.0.1:5000/LoginRegistration" style="color: black;">Login/Registration</a>
-							</li>
 						</ul>
-					</div>	
+					</div>
 
-					
+
 				</nav>
-			</div>	
+			</div>
 		</div>
 
 		<!-- Header Mobile -->
 		<div class="wrap-header-mobile">
-			<!-- Logo moblie -->		
+			<!-- Logo moblie -->
 			<div class="logo-mobile">
 				<a href="http://127.0.0.1:5000/index"><img src="static/images/icons/Try-Buy.png" alt="IMG-LOGO"></a>
 			</div>
@@ -97,7 +164,7 @@
 
 		<!-- Menu Mobile -->
 		<div class="menu-mobile">
-			
+
 			<ul class="main-menu-m">
 				<li>
 					<a href="http://127.0.0.1:5000/index">Home</a>
@@ -122,90 +189,82 @@
 		</div>
 
 		</header>
-	
-	<!-- Title page -->
-	<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('https://searchengineland.com/figz/wp-content/seloads/2018/04/responsive-design-ss-1.jpg');">
-		<h2 class="ltext-105 cl0 txt-center">
-			About
-		</h2>
-	</section>	
 
 
-	<!-- Content page -->
-	<section class="bg0 p-t-75 p-b-120">
-		<div class="container">
-			<div class="row p-b-148">
-				<div class="col-md-7 col-lg-8">
-					<div class="p-t-7 p-r-85 p-r-15-lg p-r-0-md">
-						<h3 class="mtext-111 cl2 p-b-16">
-							Welcome to TRY & BUY, enjoy your trying here!
-						</h3>
+<form action="/action_page.php">
+  <div class="container">
+    <h1>Register</h1>
+    <p>Please fill in this form to create an account.</p>
+    <hr>
 
-						<p class="stext-113 cl6 p-b-26">
-						
-						TRY & BUY is similar to an in-store changing room.It allows the buyers to try the clothes to check the fitting virtually rather than physically If you want wonderful T-shirts,Jeans,Sunglasses,Caps TRY & BUY brings you the certainty that you can find whatever you need. It will ensure you the best quality and best price products. TRY & BUY was found in 2019. The main products of TRY & BUY are One-Pieces,T-shirts,Jeans. TRY & BUY main goal is to make everyone happy on every special occasion in their life. We have a designer group so that we can manage the latest fashion styles. We are capable to provide you with a different style for every season. We are trying to put our slogan "TRY & BUY, Walk in for the Fashion, Stay in for the Style" into serious actions all the while.
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" id="email" required>
 
-						</p>
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
 
-						<p class="stext-113 cl6 p-b-26">
-						Here at TRY & BUY, everything that is displayed is Hand-picked and Authentique – brought in ditectly from the best of best brands from India as well as all over the world only for you.Start your shopping online with one of the quickest growing e-commerce brands of the country and have a smooth and new online shopping experience.Immerse yourself in the joy of browsing with the best Indian and international brands in this world of fashion.  
-						</p>
+    <label for="psw-repeat"><b>Repeat Password</b></label>
+    <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
+    <hr>
+    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
 
-					</div>
-				</div>
+    <button type="submit" class="registerbtn">Register</button>
+  </div>
 
-				<div class="col-11 col-md-5 col-lg-4 m-lr-auto">
-					<div class="how-bor1 ">
-						<div class="hov-img0">
-							<img src="https://sc01.alicdn.com/kf/HTB1VdzmaMLD8KJjSszeq6yGRpXa6/221149179/HTB1VdzmaMLD8KJjSszeq6yGRpXa6.jpg" alt="IMG">
-						</div>
-					</div>
-				</div>
-			</div>
-			
-			<div class="row">
-				<div class="order-md-2 col-md-7 col-lg-8 p-b-30">
-					<div class="p-t-7 p-l-85 p-l-15-lg p-l-0-md">
-						<h3 class="mtext-111 cl2 p-b-16">
-							Our Mission
-						</h3>
+  <div class="container signin">
+    <p>Already have an account? <a href="http://127.0.0.1:5000/Login">Sign in</a>.</p>
+  </div>
+</form>
 
-						<p class="stext-113 cl6 p-b-26">
-							Our mission is to provide an apparel virtual trial room on our website that can offer users superior design, quality, value and demo of how the product will look on him/her. We will try to accomplish this by being committed in offering great services and real values to our customers
 
-						</p>
 
-						<div class="bor16 p-l-29 p-b-9 m-t-22">
-							<p class="stext-114 cl6 p-r-40 p-b-11">
-								Creativity is just connecting things. When you ask creative people how they did something, they feel a little guilty because they didn't really do it, they just saw something. It seemed obvious to them after a while.
-							</p>
 
-							<span class="stext-111 cl8">
-								- Steve Job’s 
-							</span>
-						</div>
-					</div>
-				</div>
 
-				<div class="order-md-1 col-11 col-md-5 col-lg-4 m-lr-auto p-b-30">
-					<div class="how-bor2">
-						<div class="hov-img0">
-							<img src="https://4.bp.blogspot.com/-o9jB7naqQj4/XKJddtaiK8I/AAAAAAAAHy0/8u7xQWdnJMcuQqyukPhdq3jIWUZ1LODKQCLcBGAs/s1600/m.jpg" alt="IMG">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>	
 
-	<!-- Footer -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Footer -->
 <footer class="bg3 p-t-75 p-b-32">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-6 col-lg-3 p-b-50">
 				<h4 class="stext-301 cl0 p-b-30">
 					Categories
-					
+
 				</h4>
 
 				<ul>
@@ -220,6 +279,9 @@
 							Men
 						</a>
 					</li>
+                    <li>
+								<a href="http://127.0.0.1:5000/LoginRegistration" style="color: black;">Contact</a>
+							</li>
 
 				</ul>
 			</div>
@@ -259,15 +321,14 @@
 
 
 
-
 				<div class="p-t-27">
-				
+
 						<i class="fa fa-facebook"></i>
 					&nbsp; 	&nbsp;
 						<i class="fa fa-instagram"></i>
 					&nbsp; &nbsp;
 						<i class="fa fa-pinterest-p"></i>
-					
+
 				</div>
 			</div>
 
@@ -314,7 +375,7 @@
 				</a>
 			</div>
 
-			
+
 		</div>
 	</div>
 </footer>
@@ -326,8 +387,7 @@
 			<i class="zmdi zmdi-chevron-up"></i>
 		</span>
 	</div>
-
-<!--===============================================================================================-->	
+<!--===============================================================================================-->
 	<script src="static/vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
 	<script src="static/vendor/animsition/js/animsition.min.js"></script>
@@ -345,7 +405,70 @@
 		})
 	</script>
 <!--===============================================================================================-->
+	<script src="static/vendor/daterangepicker/moment.min.js"></script>
+	<script src="static/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="static/vendor/slick/slick.min.js"></script>
+	<script src="static/js/slick-custom.js"></script>
+<!--===============================================================================================-->
+	<script src="static/vendor/parallax100/parallax100.js"></script>
+	<script>
+        $('.parallax100').parallax100();
+	</script>
+<!--===============================================================================================-->
 	<script src="static/vendor/MagnificPopup/jquery.magnific-popup.min.js"></script>
+	<script>
+		$('.gallery-lb').each(function() { // the containers for all your galleries
+			$(this).magnificPopup({
+		        delegate: 'a', // the selector for gallery item
+		        type: 'image',
+		        gallery: {
+		        	enabled:true
+		        },
+		        mainClass: 'mfp-fade'
+		    });
+		});
+	</script>
+<!--===============================================================================================-->
+	<script src="static/vendor/isotope/isotope.pkgd.min.js"></script>
+<!--===============================================================================================-->
+	<script src="static/vendor/sweetalert/sweetalert.min.js"></script>
+	<script>
+		$('.js-addwish-b2').on('click', function(e){
+			e.preventDefault();
+		});
+
+		$('.js-addwish-b2').each(function(){
+			var nameProduct = $(this).parent().parent().find('.js-name-b2').html();
+			$(this).on('click', function(){
+				swal(nameProduct, "is added to wishlist !", "success");
+
+				$(this).addClass('js-addedwish-b2');
+				$(this).off('click');
+			});
+		});
+
+		$('.js-addwish-detail').each(function(){
+			var nameProduct = $(this).parent().parent().parent().find('.js-name-detail').html();
+
+			$(this).on('click', function(){
+				swal(nameProduct, "is added to wishlist !", "success");
+
+				$(this).addClass('js-addedwish-detail');
+				$(this).off('click');
+			});
+		});
+
+		/*---------------------------------------------*/
+
+		$('.js-addcart-detail').each(function(){
+			var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
+			$(this).on('click', function(){
+				swal(nameProduct, "is added to cart !", "success");
+			});
+		});
+
+	</script>
 <!--===============================================================================================-->
 	<script src="static/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
 	<script>
@@ -365,6 +488,6 @@
 	</script>
 <!--===============================================================================================-->
 	<script src="static/js/main.js"></script>
-	
+
 </body>
 </html>

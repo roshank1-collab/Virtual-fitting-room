@@ -48,6 +48,13 @@ def about():
 def features():
     return render_template('features.html')
 
+@app.route('/LoginRegistration')
+def LoginRegistration():
+    return render_template('LoginRegistration.html')
+@app.route('/Login')
+def Login():
+    return render_template('login.html')
+
 def gen(camera):
     while True:
         frame = camera.get_frame()
